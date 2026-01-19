@@ -1,4 +1,7 @@
-*{
+/* ==============================
+   Página de Contatos
+   ============================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,90 +9,143 @@
 
 .main-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #ddf8e0;
+    min-height: 70vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+    margin: 2rem 1.5rem;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-info {
+    width: 100%;
+    max-width: 700px;
+}
+
+.contact-info h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #2E8B57;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h1::after {
+    display: none; /* Remove o underline do h1 nesta página */
+}
+
+.contact-info > p {
+    margin: 0.5rem 0 2rem 0;
+    font-size: 1.1rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.contact-info a {
+    color: #2E8B57;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #246b45;
+    border-bottom: 2px solid #2E8B57;
 }
 
 .display-grid {
     display: grid;
-    grid-template-areas: "contato contato contato";
-    gap: 15px;
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
 }
+
 .contato {
-    background-color: #A3D9A5;
-    padding: 12px 18px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #A3D9A5 0%, #8fc98f 100%);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid #dee2e6;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
+
 .contato:hover {
-    background-color: #b3cfb8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #8fc98f 0%, #A3D9A5 100%);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
+
 .contato a {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #333333;
-    text-decoration: none;
-    font-weight: 500;
-}
-.contato a:hover {
-    color: #007bff;
-}
-.contato a i {
-    font-size: 1.2em;
-}
-
-.contact-info h1 {
-    margin-bottom: 20px;
-    font-size: 4em;
-    color: #1b5735;
-    font-weight: 800;
-}
-.contact-info p {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #666666;
-}
-.contact-info a {
-    color: black;
-    text-decoration: none;
-}
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-@media (min-width: 0) and (max-width: 600px) {
-    .contact-info {
-        width: 98%;
-        padding: 15px 20px;
-        display: flex;
-        flex-direction: column;
-    }
-    .display-grid {
-        grid-template-areas:
-            "contato"
-            "contato"
-            "contato";
-    }
-}
-
-.main-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 80vh;
-    background-color: #ddf8e0;
-    text-align: center;
-    width: 95%;
-    justify-self: center;
-    border-radius: 30px;
+    gap: 12px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    border-bottom: none !important;
+}
+
+.contato a:hover {
+    color: #1b5735 !important;
+    border-bottom: none !important;
+}
+
+.contato a i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contato:hover a i {
+    transform: scale(1.1);
+}
+
+/* ==============================
+   Responsive Design
+   ============================== */
+@media (max-width: 600px) {
+    .contact-info h1 {
+        font-size: 2rem;
+    }
+
+    .display-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-container {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-info h1 {
+        font-size: 3rem;
+    }
+
+    .main-container {
+        margin: 3rem auto;
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-info h1 {
+        font-size: 3.5rem;
+    }
+
+    .display-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
