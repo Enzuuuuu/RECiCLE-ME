@@ -31,6 +31,7 @@ nav ul li {
 }
 
 nav ul li a {
+    font-size: 1rem;
     text-decoration: none;
     color: #1b5735;
     font-weight: bold;
@@ -221,4 +222,12 @@ input[type="submit"]:hover {
     h2 {
         font-size: 2rem;
     }
+}
+
+.titulo {
+    font-size: 1.8rem;
+}
+
+.link-c {
+    font-size: 0.9rem;
 }
